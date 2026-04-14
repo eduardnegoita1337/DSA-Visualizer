@@ -16,37 +16,27 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar"
 import { HugeiconsIcon } from "@hugeicons/react"
-import { LayoutBottomIcon } from "@hugeicons/core-free-icons"
+import { Analytics01Icon } from "@hugeicons/core-free-icons"
 
 // This is sample data.
 const data = {
   navMain: [
     {
-      title: "Getting Started",
-      url: "#",
-      items: [
-        {
-          title: "Installation",
-          url: "#",
-        },
-        {
-          title: "Project Structure",
-          url: "#",
-        },
-      ],
+      title: "About",
+      url: "/",
+      isActive: true
     },
     {
-      title: "Build Your Application",
-      url: "#",
+      title: "Arrays",
+      url: "/arrays/definition",
       items: [
         {
-          title: "Routing",
-          url: "#",
+          title: "Definition",
+          url: "/arrays/definition",
         },
         {
-          title: "Data Fetching",
-          url: "#",
-          isActive: true,
+          title: "Selection Sort",
+          url: "/arrays/selectionSort",
         },
         {
           title: "Rendering",
@@ -167,11 +157,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
               <a href="#">
-                <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-                  <HugeiconsIcon icon={LayoutBottomIcon} strokeWidth={2} className="size-4" />
+                <div className="flex aspect-square size-5 items-center justify-center rounded-lg text-sidebar-primary-foreground">
+                  <HugeiconsIcon icon={Analytics01Icon} strokeWidth={3} className="size-8"/>
                 </div>
                 <div className="flex flex-col gap-0.5 leading-none">
-                  <span className="font-medium">Documentation</span>
+                  <span className="font-medium justify-center">DSA Visualizer</span>
                   <span className="">v1.0.0</span>
                 </div>
               </a>
@@ -184,7 +174,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarMenu>
             {data.navMain.map((item) => (
               <SidebarMenuItem key={item.title}>
-                <SidebarMenuButton asChild>
+                <SidebarMenuButton size="sm" asChild>
                   <a href={item.url} className="font-medium">
                     {item.title}
                   </a>
